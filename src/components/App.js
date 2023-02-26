@@ -3,6 +3,7 @@ import '../styles/App.css';
 import { useState } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Banner from './Banner';
+import '../styles/layout.css'
 
 function App() {
 
