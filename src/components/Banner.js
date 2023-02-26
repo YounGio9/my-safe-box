@@ -46,11 +46,10 @@ function Banner() {
 
         <div className="menu">
           {sections.map((section) => (
-            <Link to={`/${section}`} className="section">
+            <Link key={section} to={`/${section}`} className="section">
               <span
                 onClick={handleClick}
                 style={{ height: "100%", display: "inline-block" }}
-                key={section}
               >
                 {section}
               </span>
@@ -68,14 +67,13 @@ function Banner() {
             )}{" "}
           </span>
           {sections2.map((section) => (
-            <Link to={`/${section}`} className="section">
+            <Link key={section} to={`/${section}`} className="section">
               <span
                 onClick={handleClick}
                 style={{
                   display: visible ? "inline-block" : "none",
                   height: "100%",
                 }}
-                key={section}
               >
                 {section}
               </span>
