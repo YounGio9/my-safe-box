@@ -1,9 +1,18 @@
 .Banner {
+    width: calc(15% + 50px);
+    height: 100vh;
+    background-color: #3399E4;
+    overflow-x: hidden;
+}
+
+.Banner-fixed {
     width: 15%;
     height: 100vh;
     background-color: #3399E4;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 500;
 }
-
 .menu {
     display: grid;
     text-align: left;
@@ -18,6 +27,8 @@
 
 .section {
     width: 100%;
-    padding-left: 25px;
+    padding-left: 45px;
     line-height: 38px;
+    text-decoration: none;
+    color: black;
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import '../styles/Accueil.css'
 
 function Accueil() {
   return (
-    <div>
-        
+    <div className='Accueil'>
+        Accueil
     </div>
   )
 }
