@@ -1,12 +1,16 @@
 import React from 'react'
 import '../styles/Connexion.css'
 import logo from '../assets/LOGO2 2.png'
+import { Link } from 'react-router-dom'
+import { redirect } from 'react-router-dom'
 
 function Connexion(props) {
+  
 
 const handleSubmit = (e) => {
   e.preventDefault()
   props.setLogged(true)
+//  redirect('/Accueil')
 }
 
   return (
