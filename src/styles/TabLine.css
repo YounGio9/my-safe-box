@@ -1,6 +1,5 @@
 .TabLine-wrapper {
     width: 75%;
-    margin: auto;
     background-color: rgba(51, 153, 228, 0.31);
     border-bottom: 2px solid black;
 }
@@ -35,4 +34,8 @@
     height: 25px;
     width: 25px;
     margin: 0;
+}
+
+.Tab-checkbox:checked {
+    color: red;
 }
