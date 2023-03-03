@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "../components/Box";
 import Layout from "../components/Layout";
 import TabHead from "../components/TabHead";
@@ -7,7 +7,6 @@ import { docsInfo } from "../datas/docInfo.js";
 import "../styles/Accueil.css";
 
 function Accueil() {
-  const [checkedEvery, setCheckedEvery] = useState(false);
 
   return (
     <Layout>
@@ -37,11 +36,14 @@ function Accueil() {
         <TabHead
           col1={"Documents"}
           col2="Dernière date de changement"
-          setCheckedEvery={setCheckedEvery}
-          checkedEvery={checkedEvery}
         />
         {docsInfo.slice(0, 3).map((doc, idx) => (
-          <TabLine key={idx} {...doc} checkedEvery={checkedEvery} setCheckedEvery={setCheckedEvery}/>
+          <TabLine
+            key={idx}
+            date={doc.date}
+            type={doc.type}
+            name={doc.name}
+          />
         ))}
       </div>
     </Layout>

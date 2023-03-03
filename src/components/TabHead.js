@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/TabHead.css";
+import { DocsContext } from "./DocsContext";
 
 
-function TabHead({ col1, col2, setCheckedEvery, checkedEvery }) {
-  console.log(checkedEvery);
+function TabHead({ col1, col2}) {
+
+
+  const {checkedEvery, setCheckedEvery} = useContext(DocsContext)
   return (
     <div className="TabLine-wrapper TabHead">
       <div className="TabLine">

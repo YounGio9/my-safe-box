@@ -1,5 +1,5 @@
 .TabLine-wrapper {
-    width: 75%;
+    width: 80%;
     background-color: rgba(51, 153, 228, 0.31);
     border-bottom: 2px solid black;
 }
@@ -23,6 +23,8 @@
 
 .tab-title {
     text-transform: uppercase;
+    width: 200px;
+    text-align: left;
     font-size: 14px;
 }
 
@@ -38,4 +40,10 @@
 
 .Tab-checkbox:checked {
     color: red;
+}
+
+.file-infos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

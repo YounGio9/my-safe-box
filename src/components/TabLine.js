@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/TabLine.css";
 import file from "../assets/Vectorfile.png";
 import del from "../assets/Vectordelete.png";
 import download from "../assets/Vectordownload.png";
 import folder from "../assets/Vectorfolder.png";
+import { IoPricetagOutline } from "react-icons/io5";
+import { DocsContext } from "./DocsContext";
 
-function TabLine({ type, name, date, checkedEvery, setCheckedEvery }) {
+function TabLine({ type, name, date, fileType }) {
+
+  const {checkedEvery, setCheckedEvery} = useContext(DocsContext)
   const icon = {
     folder,
     file,
   };
+
+  const types = {
+    contrat: { color: "#9B0D0D", text: "Contrats" },
+    bulletin: { color: "#2A6C60", text: "Bulletin de paie" },
+    facture: { color: "#871FD9", text: "Factures" },
+    none: {color: 'transparent', text: ""}
+  }
+  
+  const {color, text} = types[fileType ? fileType : 'none' ]
+
 
   const [checkValue, setCheckValue] = useState(false);
   return (
@@ -19,19 +33,27 @@ function TabLine({ type, name, date, checkedEvery, setCheckedEvery }) {
           type="checkbox"
           onChange={() => {
             setCheckValue(!checkValue);
-            setCheckedEvery(false)
+            setCheckedEvery(false);
           }}
           className="Tab-checkbox"
           checked={checkValue || checkedEvery}
         />
         <div style={{ display: "flex", alignItems: "center" }}>
           <img src={icon[type]} className="Tab-icon" alt="file" />
-          <span className="tab-title">
-            {name}{" "}
-            <span style={{ visibility: "hidden" }}>
-              histoire d&apos;aligner
+          <div className={"file-infos"}>
+            <span className="tab-title">
+              {name}{" "}
             </span>
-          </span>
+            {fileType && <span
+              style={{
+                textAlign: "left",
+                color
+              }}
+            >
+              <IoPricetagOutline />{" "}
+              <span style={{ fontSize: 15 }}>{text}</span>
+            </span>}
+          </div>
         </div>
 
         <span className="Tab-date">{date}</span>

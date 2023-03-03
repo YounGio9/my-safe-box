@@ -46,7 +46,7 @@ function Banner() {
 
         <div className="menu">
           {sections.map((section) => (
-            <Link key={section} to={`/${section}`} className="section">
+            <Link key={section} to={`/${section.replace(/\s/, '')}`} className="section">
               <span
                 onClick={handleClick}
                 style={{ height: "100%", display: "inline-block" }}
