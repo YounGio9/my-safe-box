@@ -106,3 +106,15 @@ export const users = [
         date: 'FRANCISCO'
     }
 ]
+
+export const groups = [
+    {
+        name: 'Admin',
+    },
+    {
+        name: 'Admin fonctionnel',
+    },
+    {
+        name: 'Personnel',
+    }
+]

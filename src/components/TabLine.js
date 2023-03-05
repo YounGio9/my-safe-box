@@ -15,6 +15,7 @@ function TabLine({
   fileType,
   gestion = false,
   affect = false,
+  add = false
 }) {
   const { checkedEvery, setCheckedEvery } = useContext(DocsContext);
   const icon = {
@@ -68,6 +69,9 @@ function TabLine({
         <div>
           {affect && (
             <button className="general-btn"> Affecter document</button>
+          )}
+          {add && (
+            <button className="general-btn"> Ajouter un utilisateur</button>
           )}
           <img src={del} alt="delete" className="Tab-icon" />
           {!gestion && (
