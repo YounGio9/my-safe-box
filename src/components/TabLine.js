@@ -4,6 +4,7 @@ import file from "../assets/Vectorfile.png";
 import del from "../assets/Vectordelete.png";
 import download from "../assets/Vectordownload.png";
 import folder from "../assets/Vectorfolder.png";
+import shared from '../assets/VectorShare.png'
 import { IoPricetagOutline } from "react-icons/io5";
 import { DocsContext } from "./DocsContext";
 
@@ -13,7 +14,8 @@ function TabLine({ type, name, date, fileType }) {
   const icon = {
     folder,
     file,
-  };
+    shared
+  }
 
   const types = {
     contrat: { color: "#9B0D0D", text: "Contrats" },

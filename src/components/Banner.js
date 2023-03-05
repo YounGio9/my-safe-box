@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 function Banner() {
   const [active, setActive] = useState("Accueil");
 
+  useEffect(() => {
+    
+  }, [])
+
   const sections = [
     "Accueil",
     "Mes documents",
@@ -46,7 +50,11 @@ function Banner() {
 
         <div className="menu">
           {sections.map((section) => (
-            <Link key={section} to={`/${section.replace(/\s/, '')}`} className="section">
+            <Link
+              key={section}
+              to={`/${section.replace(/\s/g, "").replace("é", "e")}`}
+              className="section"
+            >
               <span
                 onClick={handleClick}
                 style={{ height: "100%", display: "inline-block" }}
@@ -67,7 +75,7 @@ function Banner() {
             )}{" "}
           </span>
           {sections2.map((section) => (
-            <Link key={section} to={`/${section}`} className="section">
+            <Link key={section} to={`/${section.replace(/\s/g, "")}`} className="section">
               <span
                 onClick={handleClick}
                 style={{

@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/Connexion.css'
 import logo from '../assets/LOGO2 2.png'
-import { Link } from 'react-router-dom'
-import { redirect } from 'react-router-dom'
+import { DocsContext } from '../components/DocsContext'
 
-function Connexion(props) {
+function Connexion() {
   
+const {setLogged} = useContext(DocsContext)
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  props.setLogged(true)
+  setLogged(true)
 //  redirect('/Accueil')
 }
 

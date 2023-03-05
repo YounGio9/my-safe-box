@@ -70,3 +70,24 @@ export const foldersInfos = [
         fileType: 'contrat' 
     }
 ]
+
+export const sharedFolders = [
+    {
+        type: 'shared',
+        name: 'Attes',
+        date: new Date().toLocaleDateString(),
+        fileType: 'contrat'
+    },
+    {
+        type: 'shared',
+        name: 'Attestation',
+        date: new Date().toLocaleDateString(),
+        fileType: 'facture'
+    },
+    {
+        type: 'shared',
+        name: 'Attesta',
+        date: new Date().toLocaleDateString(),   
+        fileType: 'contrat' 
+    }
+]
