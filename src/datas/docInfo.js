@@ -91,3 +91,18 @@ export const sharedFolders = [
         fileType: 'contrat' 
     }
 ]
+
+export const users = [
+    {
+        name: 'AQUEROUBOU',
+        date: 'FRANCISCO'
+    },
+    {
+        name: 'AQUEROUBOU',
+        date: 'FRANCISCO'
+    },
+    {
+        name: 'AQUEROUBOU',
+        date: 'FRANCISCO'
+    }
+]

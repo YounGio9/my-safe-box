@@ -9,6 +9,9 @@ import MesDocuments from "../pages/MesDocuments";
 import MesDossierspartages from "../pages/MesDossierspartages";
 import { DocsContext } from "./DocsContext";
 import MesDossiers from "../pages/MesDossiers";
+import GestionDocuments from "../pages/GestionDocuments";
+import GestionUtilisateurs from "../pages/GestionUtilisateurs"
+import GestionGroupes from '../pages/GestionGroupes'
 
 function App() {
 
@@ -29,6 +32,9 @@ function App() {
                   <Route path="MesDocuments" element={<MesDocuments />} />
                   <Route path="MesDossiers" element={<MesDossiers />}/>
                   <Route path="MesDossierspartages" element={<MesDossierspartages />} />
+                  <Route path="GestionDesdocuments" element={<GestionDocuments />} />
+                  <Route path="GestionDesUtilisateurs" element={<GestionUtilisateurs />} />
+                  <Route path="GestionDesGroupes" element={<GestionGroupes />} />
                 </Routes>
               </div>
             </div>

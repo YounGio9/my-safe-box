@@ -19,8 +19,8 @@ function Banner() {
     "Mes dossiers partagés",
   ];
   const sections2 = [
-    "Gestions des document",
-    "Gestions des utilisateurs",
+    "Gestion des documents",
+    "Gestion des utilisateurs",
     "Gestion des groupes",
   ];
 
