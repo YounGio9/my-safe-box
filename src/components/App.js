@@ -1,7 +1,7 @@
 import Connexion from "../pages/Connexion";
 import "../styles/App.css";
 import { useContext } from "react";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, HashRouter as Router} from "react-router-dom";
 import Banner from "./Banner";
 import Accueil from "../pages/Accueil";
 import "../styles/second-part.css";
