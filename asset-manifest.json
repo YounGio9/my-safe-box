@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/my-safe-box/static/css/main.49ad4510.css",
-    "main.js": "/my-safe-box/static/js/main.20644101.js",
+    "main.css": "/my-safe-box/static/css/main.aa9c40df.css",
+    "main.js": "/my-safe-box/static/js/main.67cad5dc.js",
     "static/js/787.446cc621.chunk.js": "/my-safe-box/static/js/787.446cc621.chunk.js",
     "static/media/LOGO2 2.png": "/my-safe-box/static/media/LOGO2 2.bdd48d25cb0f550d1d61.png",
     "static/media/LOGO2 1.png": "/my-safe-box/static/media/LOGO2 1.072c0ff44249327398aa.png",
     "index.html": "/my-safe-box/index.html",
-    "main.49ad4510.css.map": "/my-safe-box/static/css/main.49ad4510.css.map",
-    "main.20644101.js.map": "/my-safe-box/static/js/main.20644101.js.map",
+    "main.aa9c40df.css.map": "/my-safe-box/static/css/main.aa9c40df.css.map",
+    "main.67cad5dc.js.map": "/my-safe-box/static/js/main.67cad5dc.js.map",
     "787.446cc621.chunk.js.map": "/my-safe-box/static/js/787.446cc621.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49ad4510.css",
-    "static/js/main.20644101.js"
+    "static/css/main.aa9c40df.css",
+    "static/js/main.67cad5dc.js"
   ]
 }
