@@ -49,20 +49,31 @@ function Banner() {
         <img src={logo} alt="logo" />
 
         <div className="menu">
-          {sections.map((section) => (
-            <Link
-              key={section}
-              to={`/${section.replace(/\s/g, "").replace("é", "e")}`}
-              className="section"
-            >
-              <span
-                onClick={handleClick}
-                style={{ height: "100%", display: "inline-block" }}
+          {sections.map((section) =>
+            section === "Accueil" ? (
+              <Link key={section} to={`/`} className="section">
+                <span
+                  onClick={handleClick}
+                  style={{ height: "100%", display: "inline-block" }}
+                >
+                  {section}
+                </span>
+              </Link>
+            ) : (
+              <Link
+                key={section}
+                to={`/${section.replace(/\s/g, "").replace("é", "e")}`}
+                className="section"
               >
-                {section}
-              </span>
-            </Link>
-          ))}
+                <span
+                  onClick={handleClick}
+                  style={{ height: "100%", display: "inline-block" }}
+                >
+                  {section}
+                </span>
+              </Link>
+            )
+          )}
           <span
             style={{ cursor: "pointer", paddingLeft: 45 }}
             onClick={() => setVisible(!visible)}
