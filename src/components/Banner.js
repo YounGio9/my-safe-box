@@ -1,50 +1,50 @@
-import React from "react";
-import "../styles/Banner.css";
-import logo from "../assets/LOGO2 1.png";
-import { useState, useEffect } from "react";
-import { SlArrowRight, SlArrowDown } from "react-icons/sl";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react"
+import "../styles/Banner.css"
+import logo from "../assets/LOGO2 1.png"
+import { useState, useEffect } from "react"
+import { SlArrowRight, SlArrowDown } from "react-icons/sl"
+import { Link } from "react-router-dom"
+import { DocsContext } from "./DocsContext"
 
 function Banner() {
-  const [active, setActive] = useState("Accueil");
+  const [active, setActive] = useState("Accueil")
+  const { logged } = useContext(DocsContext)
 
-  useEffect(() => {
-    
-  }, [])
+  useEffect(() => {}, [])
 
   const sections = [
     "Accueil",
     "Mes documents",
     "Mes dossiers",
     "Mes dossiers partagés",
-  ];
+  ]
   const sections2 = [
     "Gestion des documents",
     "Gestion des utilisateurs",
     "Gestion des groupes",
-  ];
+  ]
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section");
+    const sections = document.querySelectorAll(".section")
     sections.forEach((section) => {
       if (section.innerText === active) {
-        section.style.borderLeft = "5px solid #080669";
-        section.style.boxShadow = "0 0 2px #bbb";
+        section.style.borderLeft = "5px solid #080669"
+        section.style.boxShadow = "0 0 2px #bbb"
       } else {
-        section.style.border = 0;
-        section.style.boxShadow = "none";
+        section.style.border = 0
+        section.style.boxShadow = "none"
       }
-    });
-  }, [active]);
+    })
+  }, [active])
 
   const handleClick = (e) => {
-    setActive(e.target.innerText);
-  };
+    setActive(e.target.innerText)
+  }
 
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   return (
-    <div className="Banner">
+    <div className="Banner" style={{ display: logged ? "block" : "none" }}>
       <div className="Banner-fixed">
         <img src={logo} alt="logo" />
 
@@ -75,7 +75,11 @@ function Banner() {
             )}{" "}
           </span>
           {sections2.map((section) => (
-            <Link key={section} to={`/${section.replace(/\s/g, "")}`} className="section">
+            <Link
+              key={section}
+              to={`/${section.replace(/\s/g, "")}`}
+              className="section"
+            >
               <span
                 onClick={handleClick}
                 style={{
@@ -90,7 +94,7 @@ function Banner() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Banner;
+export default Banner
