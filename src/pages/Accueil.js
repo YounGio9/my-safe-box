@@ -12,12 +12,14 @@ function Accueil() {
   const { logged } = useContext(DocsContext)
   const docs = docsInfo.slice(0, 3)
 
+  const { activeDocs } = useContext(DocsContext)
+
   return (
     <>
       {!logged ? (
         <Connexion />
       ) : (
-        <Layout>
+        <Layout docs={docs}>
           <div className="Accueil">
             <div className="box-container">
               <Box
@@ -46,7 +48,7 @@ function Accueil() {
               col2="Dernière date de changement"
               lines={docs.map((doc) => doc.id)}
             />
-            {docs.map((doc, idx) => (
+            {activeDocs.map((doc, idx) => (
               <TabLine
                 key={idx}
                 date={doc.date}

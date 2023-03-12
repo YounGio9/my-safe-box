@@ -18,7 +18,13 @@ function TabLine({
   add = false,
   id,
 }) {
+  const { setActiveDocs } = useContext(DocsContext)
+  const handleDelete = () => {
+    alert("Document envoyé à la corbeille")
+    setActiveDocs((prev) => prev.filter((doc) => doc.id !== id))
+  }
   const { checkeds, setCheckeds } = useContext(DocsContext)
+
   const icon = {
     folder,
     file,
@@ -83,7 +89,7 @@ function TabLine({
           )}
           <img
             src={del}
-            onClick={() => alert("voulez vous supprimer ?")}
+            onClick={handleDelete}
             alt="delete"
             className="Tab-icon"
           />

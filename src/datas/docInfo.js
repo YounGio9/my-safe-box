@@ -87,12 +87,14 @@ export const sharedFolders = [
     name: "Attes",
     date: new Date().toLocaleDateString(),
     fileType: "contrat",
+    id: 20,
   },
   {
     type: "shared",
     name: "Attestation",
     date: new Date().toLocaleDateString(),
     fileType: "facture",
+    id: 21,
   },
   {
     type: "shared",

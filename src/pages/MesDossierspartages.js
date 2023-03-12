@@ -1,21 +1,28 @@
-import React from "react";
-import Layout from "../components/Layout";
-import TabHead from "../components/TabHead";
-import TabLine from "../components/TabLine";
-import { sharedFolders } from "../datas/docInfo";
+import React, { useContext } from "react"
+import { DocsContext } from "../components/DocsContext"
+import Layout from "../components/Layout"
+import TabHead from "../components/TabHead"
+import TabLine from "../components/TabLine"
+import { sharedFolders } from "../datas/docInfo"
 
 function MesDossierspartages() {
+  const { activeDocs } = useContext(DocsContext)
+
   return (
-    <Layout>
+    <Layout docs={sharedFolders}>
       <div className="MesDossierspartages">
         <div className="custom-bar">
           <button className="junk">Voir corbeille</button>
         </div>
 
-        {sharedFolders.length ? (
+        {activeDocs.length ? (
           <>
-            <TabHead col1={"Dossiers"} col2="Dernière date de changement" />
-            {sharedFolders.map((doc, idx) => (
+            <TabHead
+              col1={"Dossiers"}
+              col2="Dernière date de changement"
+              lines={sharedFolders.map(({ id }) => id)}
+            />
+            {activeDocs.map((doc, idx) => (
               <TabLine {...doc} key={idx} />
             ))}
           </>
@@ -30,7 +37,7 @@ function MesDossierspartages() {
         )}
       </div>
     </Layout>
-  );
+  )
 }
 
-export default MesDossierspartages;
+export default MesDossierspartages

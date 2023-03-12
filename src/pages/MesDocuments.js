@@ -1,26 +1,28 @@
-import React from "react"
+import React, { useContext } from "react"
 import "../styles/MesDocuments.css"
 import Layout from "../components/Layout"
 import { docsInfo } from "../datas/docInfo"
 import TabHead from "../components/TabHead"
 import TabLine from "../components/TabLine"
+import { DocsContext } from "../components/DocsContext"
 
 function MesDocuments() {
+  const { activeDocs } = useContext(DocsContext)
   return (
-    <Layout>
+    <Layout docs={docsInfo}>
       <div className="Mes-documents">
         <div className="custom-bar">
           <button className="junk">Voir corbeille</button>
         </div>
 
-        {docsInfo.length ? (
+        {activeDocs.length ? (
           <>
             <TabHead
               col1={"Documents"}
               col2="Dernière date de changement"
               lines={docsInfo.map(({ id }) => id)}
             />
-            {docsInfo.map((doc, idx) => (
+            {activeDocs.map((doc, idx) => (
               <TabLine {...doc} key={idx} />
             ))}
           </>

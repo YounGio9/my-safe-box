@@ -1,23 +1,29 @@
-import React from "react";
-import Layout from "../components/Layout";
-import "../styles/MesDossiers.css";
-import { foldersInfos } from "../datas/docInfo";
-import TabHead from "../components/TabHead";
-import TabLine from "../components/TabLine";
+import React, { useContext } from "react"
+import Layout from "../components/Layout"
+import "../styles/MesDossiers.css"
+import { foldersInfos } from "../datas/docInfo"
+import TabHead from "../components/TabHead"
+import TabLine from "../components/TabLine"
+import { DocsContext } from "../components/DocsContext"
 
 function MesDossiers() {
+  const { activeDocs } = useContext(DocsContext)
   return (
-    <Layout>
+    <Layout docs={foldersInfos}>
       <div className="MesDossiers">
         <div className="custom-bar">
           <button className="general-btn">Ajouter un dossier</button>
           <button className="junk">Voir corbeille</button>
         </div>
 
-        {foldersInfos.length ? (
+        {activeDocs.length ? (
           <>
-            <TabHead col1={"Dossiers"} col2="Dernière date de changement" />
-            {foldersInfos.map((doc, idx) => (
+            <TabHead
+              col1={"Dossiers"}
+              col2="Dernière date de changement"
+              lines={foldersInfos.map(({ id }) => id)}
+            />
+            {activeDocs.map((doc, idx) => (
               <TabLine {...doc} fileType={undefined} key={idx} />
             ))}
           </>
@@ -32,7 +38,7 @@ function MesDossiers() {
         )}
       </div>
     </Layout>
-  );
+  )
 }
 
-export default MesDossiers;
+export default MesDossiers

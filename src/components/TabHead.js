@@ -8,7 +8,6 @@ function TabHead({ col1, col2, three = false, lines }) {
 
   const handleChange = useCallback(
     (e) => setCheckeds(e.target.checked ? [...lines] : []),
-
     [lines, setCheckeds]
   )
 

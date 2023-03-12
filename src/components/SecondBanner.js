@@ -1,20 +1,20 @@
-import React, { useContext, useState } from "react";
-import { GrUpdate } from "react-icons/gr";
-import { VscAdd } from "react-icons/vsc";
-import { FaSearch } from "react-icons/fa";
-import "../styles/SecondBanner.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
-import { DocsContext } from "./DocsContext";
+import React, { useContext, useState } from "react"
+import { GrUpdate } from "react-icons/gr"
+import { VscAdd } from "react-icons/vsc"
+import { FaSearch } from "react-icons/fa"
+import "../styles/SecondBanner.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faX } from "@fortawesome/free-solid-svg-icons"
+import { DocsContext } from "./DocsContext"
 function SecondBanner() {
-  const [activeProfile, setActiveProfile] = useState(false);
-  const {setLogged} = useContext(DocsContext)
+  const [activeProfile, setActiveProfile] = useState(false)
+  const { setLogged } = useContext(DocsContext)
 
   const iconStyle = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-  };
+  }
 
   return (
     <div className="second-banner">
@@ -49,12 +49,22 @@ function SecondBanner() {
       </span>
       <div className={activeProfile ? "profile" : "no-profile"}>
         <button className="p-close-btn" onClick={() => setActiveProfile(false)}>
-          <FontAwesomeIcon icon={faX} fontSize={25} color={"#FF0000"} />
+          <FontAwesomeIcon
+            style={{ cursor: "pointer" }}
+            icon={faX}
+            fontSize={25}
+            color={"#FF0000"}
+          />
         </button>
         <div className="pp-wrapper">
           <span className="lg-pp profile-picture"></span>
           <span>Francisco AQUEREBURU</span>
-          <button onClick={() => setLogged(false)} className="general-btn logout-btn">Se deconnecter</button>
+          <button
+            onClick={() => setLogged(false)}
+            className="general-btn logout-btn"
+          >
+            Se deconnecter
+          </button>
         </div>
 
         <span className="p-title">Paramètre</span>
@@ -64,7 +74,7 @@ function SecondBanner() {
         <span>Version produit: 1.0.1</span>
       </div>
     </div>
-  );
+  )
 }
 
-export default SecondBanner;
+export default SecondBanner

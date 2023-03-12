@@ -17,9 +17,16 @@
   height: 40px;
 }
 
+.profile-picture,
+.general-btn,
+.junk {
+  cursor: pointer;
+}
+
 .profile {
   padding: 40px;
   width: 16%;
+  overflow: hidden;
   position: fixed;
   z-index: 9999;
   right: 0;
