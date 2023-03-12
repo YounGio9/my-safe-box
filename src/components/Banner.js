@@ -75,7 +75,7 @@ function Banner() {
             )
           )}
           <span
-            style={{ cursor: "pointer", paddingLeft: 45 }}
+            style={{ cursor: "pointer", paddingLeft: "3vw" }}
             onClick={() => setVisible(!visible)}
           >
             Administration &nbsp;{" "}

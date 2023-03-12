@@ -10,6 +10,8 @@ import "../styles/Accueil.css"
 
 function Accueil() {
   const { logged } = useContext(DocsContext)
+  const docs = docsInfo.slice(0, 3)
+
   return (
     <>
       {!logged ? (
@@ -39,13 +41,18 @@ function Accueil() {
             </div>
 
             <p className="tab-description">Documents recents</p>
-            <TabHead col1={"Documents"} col2="Dernière date de changement" />
-            {docsInfo.slice(0, 3).map((doc, idx) => (
+            <TabHead
+              col1={"Documents"}
+              col2="Dernière date de changement"
+              lines={docs.map((doc) => doc.id)}
+            />
+            {docs.map((doc, idx) => (
               <TabLine
                 key={idx}
                 date={doc.date}
                 type={doc.type}
                 name={doc.name}
+                id={doc.id}
               />
             ))}
           </div>

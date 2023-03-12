@@ -19,7 +19,7 @@
 
 .profile {
   padding: 40px;
-  width: 19%;
+  width: 16%;
   position: fixed;
   z-index: 9999;
   right: 0;
@@ -30,12 +30,12 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .p-title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 19px;
   text-decoration: underline;
 }
 
@@ -69,25 +69,28 @@
 }
 
 .lg-pp.profile-picture {
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-
+  width: 150px;
+  height: 150px;
+  display: inline-block;
 }
 
 .logout-btn {
-    width: 50%;
-    padding: 10px 0;
+  width: 50%;
+  padding: 10px 0;
+}
+
+.logout-btn.general-btn {
+  margin-left: 0;
 }
 
 .pp-wrapper {
-    display: grid;
-    width: 100%;
-    justify-items: center;
-    gap: 10px;
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  gap: 10px;
 }
 
-.p-close-btn{
-    background: transparent;
-    border: 0;
+.p-close-btn {
+  background: transparent;
+  border: 0;
 }

@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
-import "../styles/TabLine.css";
-import file from "../assets/Vectorfile.png";
-import del from "../assets/Vectordelete.png";
-import download from "../assets/Vectordownload.png";
-import folder from "../assets/Vectorfolder.png";
-import shared from "../assets/VectorShare.png";
-import { IoPricetagOutline } from "react-icons/io5";
-import { DocsContext } from "./DocsContext";
+import React, { useContext } from "react"
+import "../styles/TabLine.css"
+import file from "../assets/Vectorfile.png"
+import del from "../assets/Vectordelete.png"
+import download from "../assets/Vectordownload.png"
+import folder from "../assets/Vectorfolder.png"
+import shared from "../assets/VectorShare.png"
+import { IoPricetagOutline } from "react-icons/io5"
+import { DocsContext } from "./DocsContext"
 
 function TabLine({
   type,
@@ -15,39 +15,47 @@ function TabLine({
   fileType,
   gestion = false,
   affect = false,
-  add = false
+  add = false,
+  id,
 }) {
-  const { checkedEvery, setCheckedEvery } = useContext(DocsContext);
+  const { checkeds, setCheckeds } = useContext(DocsContext)
   const icon = {
     folder,
     file,
     shared,
-  };
+  }
 
   const types = {
     contrat: { color: "#9B0D0D", text: "Contrats" },
     bulletin: { color: "#2A6C60", text: "Bulletin de paie" },
     facture: { color: "#871FD9", text: "Factures" },
     none: { color: "transparent", text: "" },
-  };
+  }
 
-  const { color, text } = types[fileType ? fileType : "none"];
+  const { color, text } = types[fileType ? fileType : "none"]
 
-  const [checkValue, setCheckValue] = useState(false);
+  const handleChange = (e) => {
+    setCheckeds((prev) =>
+      e.target.checked ? [...prev, id] : prev.filter((elem) => elem !== id)
+    )
+  }
+
   return (
     <div className="TabLine-wrapper">
       <div className="TabLine">
         <input
           type="checkbox"
-          onChange={() => {
-            setCheckValue(!checkValue);
-            setCheckedEvery(false);
-          }}
+          onChange={handleChange}
           className="Tab-checkbox"
-          checked={checkValue || checkedEvery}
+          checked={checkeds.includes(id)}
         />
         <div style={{ display: "flex", alignItems: "center" }}>
-          <img src={icon[type]} style={{visibility: type ? 'visible' : 'hidden'}} className="Tab-icon" alt="file" />
+          <img
+            src={icon[type]}
+            style={{ visibility: type ? "visible" : "hidden" }}
+            className="Tab-icon"
+            alt="file"
+          />
           <div className={"file-infos"}>
             <span className="tab-title">{name} </span>
             {fileType && (
@@ -73,14 +81,19 @@ function TabLine({
           {add && (
             <button className="general-btn"> Ajouter un utilisateur</button>
           )}
-          <img src={del} alt="delete" className="Tab-icon" />
+          <img
+            src={del}
+            onClick={() => alert("voulez vous supprimer ?")}
+            alt="delete"
+            className="Tab-icon"
+          />
           {!gestion && (
             <img src={download} alt="download" className="Tab-icon" />
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default TabLine;
+export default TabLine
