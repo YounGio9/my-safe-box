@@ -17,6 +17,7 @@ function Banner() {
     setActive(location.pathname === '/' ? "Accueil" : location.pathname.slice(1))
   }, [location])
 
+
   const sections = [
     "Accueil",
     "Mes documents",
@@ -32,7 +33,7 @@ function Banner() {
   useLayoutEffect(() => {
     const sections = document.querySelectorAll(".section")
     sections.forEach((section) => {
-      if (section.innerText.split(' ').join('') === active) {
+      if (section.innerText.split(' ').join('').replace('é', 'e') === active) {
         section.style.borderLeft = "5px solid #080669"
         section.style.boxShadow = "0 0 2px #bbb"
       } else {
