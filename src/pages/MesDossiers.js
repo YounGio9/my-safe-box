@@ -7,7 +7,7 @@ import TabLine from "../components/TabLine"
 import { DocsContext } from "../components/DocsContext"
 
 function MesDossiers() {
-  const { activeDocs } = useContext(DocsContext)
+  const { activeDocs, search } = useContext(DocsContext)
   return (
     <Layout docs={foldersInfos}>
       <div className="MesDossiers">
@@ -23,9 +23,13 @@ function MesDossiers() {
               col2="Dernière date de changement"
               lines={foldersInfos.map(({ id }) => id)}
             />
-            {activeDocs.map((doc, idx) => (
-              <TabLine {...doc} fileType={undefined} key={idx} />
-            ))}
+            {activeDocs.map(
+              (doc, idx) =>
+                (!search ||
+                  doc.name.toLowerCase().includes(search.toLowerCase())) && (
+                  <TabLine {...doc} fileType={undefined} key={idx} />
+                )
+            )}
           </>
         ) : (
           <div className="no-doc">

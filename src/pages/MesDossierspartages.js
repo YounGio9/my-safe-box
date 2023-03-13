@@ -6,7 +6,7 @@ import TabLine from "../components/TabLine"
 import { sharedFolders } from "../datas/docInfo"
 
 function MesDossierspartages() {
-  const { activeDocs } = useContext(DocsContext)
+  const { activeDocs, search } = useContext(DocsContext)
 
   return (
     <Layout docs={sharedFolders}>
@@ -22,9 +22,13 @@ function MesDossierspartages() {
               col2="Dernière date de changement"
               lines={sharedFolders.map(({ id }) => id)}
             />
-            {activeDocs.map((doc, idx) => (
-              <TabLine {...doc} key={idx} />
-            ))}
+            {activeDocs.map(
+              (doc, idx) =>
+                (!search ||
+                  doc.name.toLowerCase().includes(search.toLowerCase())) && (
+                  <TabLine {...doc} key={idx} />
+                )
+            )}
           </>
         ) : (
           <div className="no-doc">

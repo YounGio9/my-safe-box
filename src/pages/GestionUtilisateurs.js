@@ -6,7 +6,7 @@ import TabLine from "../components/TabLine"
 import { users } from "../datas/docInfo"
 
 function GestionUtilisateurs() {
-  const { activeDocs } = useContext(DocsContext)
+  const { activeDocs, search } = useContext(DocsContext)
 
   return (
     <Layout docs={users}>
@@ -26,9 +26,13 @@ function GestionUtilisateurs() {
             three
             lines={users.map(({ id }) => id)}
           />
-          {activeDocs.map((doc, idx) => (
-            <TabLine {...doc} gestion affect key={idx} />
-          ))}
+          {activeDocs.map(
+            (doc, idx) =>
+              (!search ||
+                doc.name.toLowerCase().includes(search.toLowerCase())) && (
+                <TabLine {...doc} gestion affect key={idx} />
+              )
+          )}
         </>
       ) : (
         <div className="no-doc">Aucun Utilisateur.</div>

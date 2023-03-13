@@ -6,7 +6,7 @@ import { DocsContext } from "../components/DocsContext"
 import { groups } from "../datas/docInfo"
 
 function GestionGroupes() {
-  const { activeDocs } = useContext(DocsContext)
+  const { activeDocs, search } = useContext(DocsContext)
 
   return (
     <Layout docs={groups}>
@@ -25,9 +25,13 @@ function GestionGroupes() {
             three
             lines={groups.map(({ id }) => id)}
           />
-          {activeDocs.map((doc, idx) => (
-            <TabLine {...doc} gestion add key={idx} />
-          ))}
+          {activeDocs.map(
+            (doc, idx) =>
+              (!search ||
+                doc.name.toLowerCase().includes(search.toLowerCase())) && (
+                <TabLine {...doc} gestion add key={idx} />
+              )
+          )}
         </>
       ) : (
         <div className="no-doc">Aucun groupe.</div>

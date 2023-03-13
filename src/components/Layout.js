@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useLayoutEffect } from "react"
 import SecondBanner from "./SecondBanner"
 import "../styles/Layout.css"
 import { DocsContext } from "./DocsContext"
 
 function Layout({ children, docs }) {
-  const { setActiveDocs } = useContext(DocsContext)
-  const { setCheckeds } = useContext(DocsContext)
+  const { setActiveDocs, setSearch, setCheckeds } = useContext(DocsContext)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setActiveDocs(docs)
+    setSearch("")
     // eslint-disable-next-line
   }, [])
 

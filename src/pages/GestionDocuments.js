@@ -6,7 +6,7 @@ import TabLine from "../components/TabLine"
 import { DocsContext } from "../components/DocsContext"
 
 function GestionDocuments() {
-  const { activeDocs } = useContext(DocsContext)
+  const { activeDocs, search } = useContext(DocsContext)
 
   return (
     <Layout docs={docsInfo}>
@@ -25,9 +25,13 @@ function GestionDocuments() {
             col2="Dernière date d'éxécution"
             lines={docsInfo.map(({ id }) => id)}
           />
-          {activeDocs.map((doc, idx) => (
-            <TabLine {...doc} gestion key={idx} />
-          ))}
+          {activeDocs.map(
+            (doc, idx) =>
+              (!search ||
+                doc.name.toLowerCase().includes(search.toLowerCase())) && (
+                <TabLine {...doc} gestion key={idx} />
+              )
+          )}
         </>
       ) : (
         <div className="no-doc">

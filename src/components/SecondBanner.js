@@ -6,14 +6,20 @@ import "../styles/SecondBanner.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faX } from "@fortawesome/free-solid-svg-icons"
 import { DocsContext } from "./DocsContext"
+
 function SecondBanner() {
   const [activeProfile, setActiveProfile] = useState(false)
   const { setLogged } = useContext(DocsContext)
+  const { search, setSearch } = useContext(DocsContext)
 
   const iconStyle = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+  }
+
+  const handleChange = (e) => {
+    setSearch(e.target.value)
   }
 
   return (
@@ -22,8 +28,10 @@ function SecondBanner() {
         <input
           placeholder="Rechercher"
           type="text"
+          value={search}
           name="search"
           id="searchbar"
+          onChange={handleChange}
         />
         <FaSearch
           style={{

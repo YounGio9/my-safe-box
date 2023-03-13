@@ -12,7 +12,7 @@ function Accueil() {
   const { logged } = useContext(DocsContext)
   const docs = docsInfo.slice(0, 3)
 
-  const { activeDocs } = useContext(DocsContext)
+  const { activeDocs, search } = useContext(DocsContext)
 
   return (
     <>
@@ -48,15 +48,19 @@ function Accueil() {
               col2="Dernière date de changement"
               lines={docs.map((doc) => doc.id)}
             />
-            {activeDocs.map((doc, idx) => (
-              <TabLine
-                key={idx}
-                date={doc.date}
-                type={doc.type}
-                name={doc.name}
-                id={doc.id}
-              />
-            ))}
+            {activeDocs.map(
+              (doc, idx) =>
+                (!search ||
+                  doc.name.toLowerCase().includes(search.toLowerCase())) && (
+                  <TabLine
+                    key={idx}
+                    date={doc.date}
+                    type={doc.type}
+                    name={doc.name}
+                    id={doc.id}
+                  />
+                )
+            )}
           </div>
         </Layout>
       )}

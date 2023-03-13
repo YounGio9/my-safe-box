@@ -5,12 +5,13 @@ export const DocsContext = createContext({})
 
 const DocsContextProvider = ({ children }) => {
   const [checkeds, setCheckeds] = useState([])
+  const [search, setSearch] = useState("")
 
   const [activeDocs, setActiveDocs] = useState([])
 
-  useEffect(() => {
-    console.log(activeDocs)
-  }, [activeDocs])
+  // useEffect(() => {
+  //   console.log(activeDocs)
+  // }, [activeDocs])
 
   const savedLog = sessionStorage.getItem("logged")
   const [logged, setLogged] = useState(savedLog ? JSON.parse(savedLog) : false)
@@ -30,6 +31,8 @@ const DocsContextProvider = ({ children }) => {
         setActiveDocs,
         logged,
         setLogged,
+        search,
+        setSearch,
       }}
     >
       {children}
