@@ -1,7 +1,8 @@
 import React, { useContext } from "react"
 import "../styles/Banner.css"
+import { useLocation } from "react-router-dom"
 import logo from "../assets/LOGO2 1.png"
-import { useState, useEffect } from "react"
+import { useState, useLayoutEffect, useEffect } from "react"
 import { SlArrowRight, SlArrowDown } from "react-icons/sl"
 import { Link } from "react-router-dom"
 import { DocsContext } from "./DocsContext"
@@ -10,7 +11,11 @@ function Banner() {
   const [active, setActive] = useState("Accueil")
   const { logged } = useContext(DocsContext)
 
-  useEffect(() => {}, [])
+  let location = useLocation()
+
+  useEffect(() => {
+    setActive(location.pathname === '/' ? "Accueil" : location.pathname.slice(1))
+  }, [location])
 
   const sections = [
     "Accueil",
@@ -24,10 +29,10 @@ function Banner() {
     "Gestion des groupes",
   ]
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const sections = document.querySelectorAll(".section")
     sections.forEach((section) => {
-      if (section.innerText === active) {
+      if (section.innerText.split(' ').join('') === active) {
         section.style.borderLeft = "5px solid #080669"
         section.style.boxShadow = "0 0 2px #bbb"
       } else {
@@ -37,9 +42,9 @@ function Banner() {
     })
   }, [active])
 
-  const handleClick = (e) => {
-    setActive(e.target.innerText)
-  }
+  // const handleClick = (e) => {
+  //   setActive(e.target.innerText)
+  // }
 
   const [visible, setVisible] = useState(false)
 
@@ -53,7 +58,7 @@ function Banner() {
             section === "Accueil" ? (
               <Link key={section} to={`/`} className="section">
                 <span
-                  onClick={handleClick}
+                  // onClick={handleClick}
                   style={{ height: "100%", display: "inline-block" }}
                 >
                   {section}
@@ -66,7 +71,7 @@ function Banner() {
                 className="section"
               >
                 <span
-                  onClick={handleClick}
+                  // onClick={handleClick}
                   style={{ height: "100%", display: "inline-block" }}
                 >
                   {section}
@@ -92,7 +97,7 @@ function Banner() {
               className="section"
             >
               <span
-                onClick={handleClick}
+                // onClick={handleClick}
                 style={{
                   display: visible ? "inline-block" : "none",
                   height: "100%",
