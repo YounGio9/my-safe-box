@@ -9,10 +9,9 @@ import Connexion from "./Connexion"
 import "../styles/Accueil.css"
 
 function Accueil() {
-  const { logged } = useContext(DocsContext)
   const docs = docsInfo.slice(0, 3)
 
-  const { activeDocs, search } = useContext(DocsContext)
+  const { activeDocs, search, logged } = useContext(DocsContext)
 
   return (
     <>
@@ -47,6 +46,7 @@ function Accueil() {
               col1={"Documents"}
               col2="Dernière date de changement"
               lines={docs.map((doc) => doc.id)}
+              background
             />
             {activeDocs.map(
               (doc, idx) =>
@@ -58,6 +58,7 @@ function Accueil() {
                     type={doc.type}
                     name={doc.name}
                     id={doc.id}
+                    background
                   />
                 )
             )}

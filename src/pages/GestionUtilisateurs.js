@@ -12,12 +12,12 @@ function GestionUtilisateurs() {
     <Layout docs={users}>
       <div>
         <div className="custom-bar">
-          <button className="general-btn">Ajouter fichier zip</button>
-          <button className="general-btn">Ajouter fichier csv</button>
+          <button className="general-btn">Ajouter des utilisateurs en masse</button>
+          <button className="general-btn">Ajouter utilisateur</button>
           <button className="junk">Voir corbeille</button>
         </div>
       </div>
-
+      <p className="tab-description">Liste des utilisateurs / employés</p>
       {activeDocs.length ? (
         <>
           <TabHead

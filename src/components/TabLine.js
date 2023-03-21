@@ -17,6 +17,7 @@ function TabLine({
   affect = false,
   add = false,
   id,
+  background
 }) {
   const { setActiveDocs } = useContext(DocsContext)
   const handleDelete = () => {
@@ -47,7 +48,7 @@ function TabLine({
   }
 
   return (
-    <div className="TabLine-wrapper">
+    <div className="TabLine-wrapper" style={{background: background ? 'rgba(51, 153, 228, 0.31)' : "rgba(220, 218, 218, 0.26)"}}>
       <div className="TabLine">
         <input
           type="checkbox"

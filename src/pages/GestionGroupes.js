@@ -17,11 +17,12 @@ function GestionGroupes() {
         </div>
       </div>
 
+      <p className="tab-description">Liste des groupe</p>
       {activeDocs.length ? (
         <>
           <TabHead
             col1={"Nom"}
-            col2="Prénom"
+            col2=""
             three
             lines={groups.map(({ id }) => id)}
           />

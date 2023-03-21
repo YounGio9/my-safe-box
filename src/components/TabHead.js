@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from "react"
 import "../styles/TabHead.css"
 import { DocsContext } from "./DocsContext"
 
-function TabHead({ col1, col2, three = false, lines }) {
+function TabHead({ col1, col2, three = false, lines, background }) {
   const { checkeds, setCheckeds } = useContext(DocsContext)
   // const [checkedEvery, setcheckedEvery] = useState(false)
 
@@ -12,7 +12,7 @@ function TabHead({ col1, col2, three = false, lines }) {
   )
 
   return (
-    <div className="TabLine-wrapper TabHead">
+    <div className="TabLine-wrapper TabHead" style={{background: background ? 'rgba(51, 153, 228, 0.31)' : "rgba(220, 218, 218, 0.26)"}}>
       <div className="TabLine">
         <input
           type="checkbox"
