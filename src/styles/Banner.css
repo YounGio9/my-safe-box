@@ -1,5 +1,5 @@
 .Banner {
-  width: 21vw;
+  width: 21%;
   height: 100vh;
   background-color: white;
   overflow: hidden;
@@ -10,7 +10,7 @@
 }
 
 .Banner-fixed {
-  width: 18vw;
+  width: 18%;
   height: 100vh;
   background-color: #3399e4;
   overflow: hidden;

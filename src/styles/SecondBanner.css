@@ -101,3 +101,9 @@
   background: transparent;
   border: 0;
 }
+
+@media (max-width: 1600px) {
+  .search-bar {
+    width: 42%;
+  }
+}
