@@ -12,11 +12,18 @@ import GestionGroupes from "../pages/GestionGroupes"
 import DocsContextProvider from "./DocsContext"
 
 function App() {
+
+
+  let cs = window.getComputedStyle(document.documentElement)
+  // eslint-disable-next-line no-undef
+  let actualSize = parseFloat(cs.fontSize)
+
+  console.log(actualSize)
   return (
     <DocsContextProvider>
       <div className="App">
         <Router>
-          <div className="second-part">
+          <div className="second-part" style={{fontSize: 16}}>
             <Banner />
             <div className="page">
               <Routes>

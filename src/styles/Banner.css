@@ -2,7 +2,7 @@
   width: 21vw;
   height: 100vh;
   background-color: white;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .Banner img {
@@ -13,7 +13,7 @@
   width: 18vw;
   height: 100vh;
   background-color: #3399e4;
-  overflow-x: hidden;
+  overflow: hidden;
   position: fixed;
   z-index: 500;
 }

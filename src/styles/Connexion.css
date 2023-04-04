@@ -53,7 +53,7 @@
   width: calc(60% + 22px);
   text-align: right;
   margin: -8px auto 0px auto;
-  font-size: 1.1vw;
+  font-size: 15px;
   color: rgba(0, 0, 0, 0.47);
   text-decoration: underline;
 }
@@ -84,6 +84,5 @@
 }
 
 .logo-part img {
-  width: 76%;
-  height: auto;
+  width: 75%;
 }
