@@ -52,30 +52,38 @@
 .Connexion span {
   width: calc(60% + 22px);
   text-align: right;
-  margin: -20px auto;
-  font-size: 15px;
+  margin: -8px auto 0px auto;
+  font-size: 1.1vw;
   color: rgba(0, 0, 0, 0.47);
   text-decoration: underline;
 }
-
+.Connexion label {
+  height: 10%;
+}
 .Connexion input {
   width: 60%;
   padding: 0 10px;
-  height: 43px;
+  height: 100%;
   font-weight: 400;
   font-size: 18px;
   font-family: "Inter", sans-serif;
   outline: none;
 }
 
+
 .Connexion button {
   font-family: "Inter", sans-serif;
   width: 62%;
-  height: 57px;
+  height: 12%;
   background: #2d315d;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.4rem;
   color: white;
   margin: auto;
   border: 0;
+}
+
+.logo-part img {
+  width: 76%;
+  height: auto;
 }
