@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/my-safe-box/static/css/main.45758a2c.css",
+    "main.css": "/my-safe-box/static/css/main.6f6eac7c.css",
     "main.js": "/my-safe-box/static/js/main.619ba029.js",
     "static/js/787.446cc621.chunk.js": "/my-safe-box/static/js/787.446cc621.chunk.js",
     "static/media/LOGO2 2.png": "/my-safe-box/static/media/LOGO2 2.bdd48d25cb0f550d1d61.png",
     "static/media/LOGO2 1.png": "/my-safe-box/static/media/LOGO2 1.072c0ff44249327398aa.png",
     "index.html": "/my-safe-box/index.html",
-    "main.45758a2c.css.map": "/my-safe-box/static/css/main.45758a2c.css.map",
+    "main.6f6eac7c.css.map": "/my-safe-box/static/css/main.6f6eac7c.css.map",
     "main.619ba029.js.map": "/my-safe-box/static/js/main.619ba029.js.map",
     "787.446cc621.chunk.js.map": "/my-safe-box/static/js/787.446cc621.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45758a2c.css",
+    "static/css/main.6f6eac7c.css",
     "static/js/main.619ba029.js"
   ]
 }
