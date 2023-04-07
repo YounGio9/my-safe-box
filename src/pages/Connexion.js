@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import "../styles/Connexion.css";
 import logo from "../assets/LOGO2 2.png";
 import { DocsContext } from "../components/DocsContext";
+import mailIcon from '../assets/Vectormail.png'
+import pwdIcon from '../assets/Vectorpwd.png'
 
 function Connexion() {
-  const { setLogged } = useContext(DocsContext);
+  const { setLogged } = useContext(DocsContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ function Connexion() {
             <p>CONNEXION</p>
 
             <label htmlFor="email">
+            <img src={mailIcon} alt=""/>
               <input
                 type={"email"}
                 required
@@ -33,7 +36,8 @@ function Connexion() {
               />
             </label>
 
-            <label htmlFor="password">
+            <label htmlFor="password" >
+            <img src={pwdIcon} alt=""/>
               <input
                 type="password"
                 placeholder="Mot de passe"

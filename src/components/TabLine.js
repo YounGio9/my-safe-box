@@ -38,6 +38,7 @@ function TabLine({
     facture: { color: "#871FD9", text: "Factures" },
     none: { color: "transparent", text: "" },
   }
+  const noBorder = {borderRadius: 0}
 
   const { color, text } = types[fileType ? fileType : "none"]
 
@@ -83,10 +84,10 @@ function TabLine({
 
         <div>
           {affect && (
-            <button className="general-btn"> Affecter document</button>
+            <button className="general-btn" style={noBorder}> Affecter document</button>
           )}
           {add && (
-            <button className="general-btn"> Ajouter un utilisateur</button>
+            <button className="general-btn" style={noBorder}> Ajouter un utilisateur</button>
           )}
           <img
             src={del}
