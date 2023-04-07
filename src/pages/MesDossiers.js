@@ -24,6 +24,7 @@ function MesDossiers() {
         </div>
         <Modal
           open={modalIsOpen}
+          setOpen={setModalIsOpen}
           actionText="Ajouter"
           handleClose={() => {
             if(docName){

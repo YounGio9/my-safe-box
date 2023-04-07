@@ -29,7 +29,7 @@ function GestionDocuments() {
             (doc, idx) =>
               (!search ||
                 doc.name.toLowerCase().includes(search.toLowerCase())) && (
-                <TabLine {...doc} gestion key={idx} />
+                <TabLine {...doc} share users={[{name: 'AQUEBIROU FRANCISCO'}]} gestion key={idx} />
               )
           )}
         </>

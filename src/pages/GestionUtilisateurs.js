@@ -9,7 +9,7 @@ import { users } from "../datas/docInfo"
 
 function GestionUtilisateurs() {
   const { activeDocs, search } = useContext(DocsContext)
-  const {modalIsOpen, setModalIsOpen, openModal} = useModalContext()
+  const {modalIsOpen, setModalIsOpen, openModal, inputStyle} = useModalContext()
 
   return (
     <Layout docs={users}>
@@ -20,8 +20,26 @@ function GestionUtilisateurs() {
           <button className="junk">Voir corbeille</button>
         </div>
       </div>
-      <Modal title={"Nouvel Utilisateur"} actionText="Ajouter" open={modalIsOpen} handleClose={() => setModalIsOpen(false)}>
-        Nothing for the moment
+      <Modal title={"Nouvel Utilisateur"} open={modalIsOpen} setOpen={setModalIsOpen} actionText="Ajouter" handleClose={() => setModalIsOpen(false)}>
+      <form action="" encType="multipart/form-data">
+         <label >
+          Id 
+          <input type="text" style={inputStyle} />
+        </label>
+        <label >
+          Nom
+          <input type="text" style={inputStyle} />
+        </label>
+        <label >
+          Prénom
+          <input type="text" style={inputStyle} />
+        </label>
+        <label style={{marginTop: 25, display: 'inline-block', width: '100%'}}>
+          Affecter document
+          <input type="file" accept="image/*" style={{...inputStyle, padding: '10px 5px'}} />
+        </label>
+      </form>
+       
       </Modal>
       <p className="tab-description">Liste des utilisateurs / employés</p>
       {activeDocs.length ? (
