@@ -12,7 +12,7 @@ function SecondBanner() {
   const [activeProfile, setActiveProfile] = useState(false)
   const { setLogged } = useContext(DocsContext)
   const { search, setSearch } = useContext(DocsContext)
-  const [advanvedSearch, setAdvanvedSearch] = useState(false);
+  const [advanvedSearch, setAdvanvedSearch] = useState(false)
 
   const iconStyle = {
     display: "flex",
@@ -45,7 +45,12 @@ function SecondBanner() {
             margin: "auto",
           }}
         />
-        <Modal open={advanvedSearch} setOpen={setAdvanvedSearch}></Modal>
+        <Modal basic open={advanvedSearch} setOpen={setAdvanvedSearch}>
+          <div style={{background: '#D0D0D0', width: '60%', marginTop: '6vh',display: 'flex', alignItems: 'center', padding: '16px'}}>
+            Filter par: <div style={{flexGrow: 1}}><input type={"date"} style={{marginRight: 20, marginLeft: 20, height: 23}}/><input style={{marginRight: 20, height: 23}} type="text" placeholder="Libellé" /><input style={{marginRight: 20, height: 23}} type="text" placeholder="Type" /></div> 
+            <button className="general-btn" style={{borderRadius: 0, paddingLeft: 40, fontStyle: 'italic', paddingRight: 40}}> Rechercher</button>
+          </div>  
+        </Modal>
       </div>
       <span className="advanced-search" onClick={() => setAdvanvedSearch(true)}>Recherche avancée </span>
 
