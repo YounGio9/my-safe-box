@@ -1,6 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { useModalContext } from "./ModalContext"
 
 function Modal({ title, actionText, open, setOpen, children, handleClose }) {
 

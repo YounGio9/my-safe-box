@@ -6,11 +6,13 @@ import "../styles/SecondBanner.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faX } from "@fortawesome/free-solid-svg-icons"
 import { DocsContext } from "./DocsContext"
+import Modal from "./Modal"
 
 function SecondBanner() {
   const [activeProfile, setActiveProfile] = useState(false)
   const { setLogged } = useContext(DocsContext)
   const { search, setSearch } = useContext(DocsContext)
+  const [advanvedSearch, setAdvanvedSearch] = useState(false);
 
   const iconStyle = {
     display: "flex",
@@ -43,8 +45,9 @@ function SecondBanner() {
             margin: "auto",
           }}
         />
+        <Modal open={advanvedSearch} setOpen={setAdvanvedSearch}></Modal>
       </div>
-      <span className="advanced-search">Recherche avancée </span>
+      <span className="advanced-search" onClick={() => setAdvanvedSearch(true)}>Recherche avancée </span>
 
       <span className="add-btn" style={iconStyle}>
         <VscAdd fontSize={29} />

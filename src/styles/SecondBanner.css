@@ -68,6 +68,11 @@
   font-size: 22px;
 }
 
+.advanced-search:hover {
+  cursor: pointer;
+  color: cadetblue;
+}
+
 .add-btn {
   background-color: hsl(235, 35%, 27%);
   padding: 5px;

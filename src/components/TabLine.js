@@ -5,10 +5,9 @@ import del from '../assets/Vectordelete.png'
 import download from '../assets/Vectordownload.png'
 import folder from '../assets/Vectorfolder.png'
 import shared from '../assets/VectorShare.png'
-import shareIcon from '../assets/Vectorshare.png'
+import shareIcon from '../assets/VectorSend.png'
 import { IoPricetagOutline } from 'react-icons/io5'
 import { DocsContext } from './DocsContext'
-import { useModalContext } from './ModalContext'
 import Modal from './Modal'
 
 function TabLine({
@@ -25,7 +24,6 @@ function TabLine({
   background,
 }) {
   const { setActiveDocs } = useContext(DocsContext)
-  const { inputStyle } = useModalContext()
 
   const handleDelete = () => {
     alert('Document envoyé à la corbeille')
@@ -47,7 +45,7 @@ function TabLine({
   }
   const noBorder = { borderRadius: 0 }
 
-  const { color, text } = types[fileType ? fileType : 'none']
+  const { color, text } = types[fileType ?? 'none']
 
   const handleChange = (e) => {
     setCheckeds((prev) =>
